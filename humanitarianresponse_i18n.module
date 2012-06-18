@@ -32,6 +32,8 @@
  * Implements hook_i18n_object_info_alter(&$info)
  */
 function humanitarianresponse_i18n_i18n_object_info_alter(&$info) {
-  debug($info);
+  $info['taxonomy_term']['key'] = 'uuid';
+  $info['taxonomy_vocabulary']['key'] = 'machine_name';
+  
 }
 
