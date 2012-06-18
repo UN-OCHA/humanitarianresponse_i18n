@@ -10,26 +10,34 @@
 function humanitarianresponse_i18n_strongarm() {
   $export = array();
 
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  /*$strongarm = new stdClass;
+  $strongarm->disabled = FALSE; 
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_hide_translation_links';
   $strongarm->value = TRUE;
-  $export['i18n_hide_translation_links'] = $strongarm;
+  $export['i18n_hide_translation_links'] = $strongarm;*/
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
-    0 => 'filtered_html',
-    1 => 'full_html',
-    2 => 'plain_text',
+    'filtered_html' => 'filtered_html',
+    'full_html' => 'full_html',
+    'plain_text' => 'plain_text',
+    'simple' => 0,
   );
   $export['i18n_string_allowed_formats'] = $strongarm;
-
-  $strongarm = new stdClass;
+  
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_string_source_language';
+  $strongarm->value = 'en';
+  $export['i18n_string_source_language'] = $strongarm;
+
+  /*$strongarm = new stdClass;
+  $strongarm->disabled = FALSE;
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_variable_conf';
   $strongarm->value = array(
@@ -53,7 +61,7 @@ function humanitarianresponse_i18n_strongarm() {
   $export['i18n_variable_conf'] = $strongarm;
 
   $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->disabled = FALSE;
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_variable_list';
   $strongarm->value = array(
@@ -82,7 +90,7 @@ function humanitarianresponse_i18n_strongarm() {
     22 => 'user_mail_status_canceled_body',
     23 => 'user_picture_guidelines',
   );
-  $export['i18n_variable_list'] = $strongarm;
+  $export['i18n_variable_list'] = $strongarm;*/
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
