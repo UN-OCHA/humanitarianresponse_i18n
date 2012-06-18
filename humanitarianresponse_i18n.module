@@ -6,7 +6,7 @@
 /**
  * Implements hook_enable()
  */
-function humanitarianresponse_i18n_enable() {
+/*function humanitarianresponse_i18n_enable() {
   // Make main menu translatable
   $menu = menu_load('main-menu');
   $menu['i18n_mode'] = I18N_MODE_MULTIPLE;
@@ -26,5 +26,12 @@ function humanitarianresponse_i18n_enable() {
   }
   variable_set('locale_language_providers_weight_language', $providers_weight);
   language_types_set();
+}*/
+
+/**
+ * Implements hook_i18n_object_info_alter(&$info)
+ */
+function humanitarianresponse_i18n_i18n_object_info_alter(&$info) {
+  debug($info);
 }
 
