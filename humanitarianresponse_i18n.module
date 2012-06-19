@@ -61,3 +61,19 @@ function humanitarianresponse_i18n_uuid_sync() {
     }
   }
 }
+
+/**
+ * Implements hook_menu_link_insert()
+ */
+function humanitarianresponse_i18n_menu_link_insert($link) {
+  module_load_include('inc', 'uuid', 'uuid.features.menu');
+  uuid_menu_link_make_universal($link);
+  $uuid = $link['uuid_menu_name'].':'.$link['uuid_link_path'];
+  db_update('menu_links')
+    ->fields(array(
+      'uuid' => $uuid,
+    ))
+    ->condition('mlid', $link['mlid'])
+    ->execute();
+}
+    
