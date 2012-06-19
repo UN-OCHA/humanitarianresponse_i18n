@@ -37,7 +37,7 @@ function humanitarianresponse_i18n_i18n_object_info_alter(&$info) {
   /*$info['menu_link']['key'] = array('menu_name', 'link_path');*/
 }
 
-function humanitarianresponse_i18n_i18n_string_list_menu_link_alter(&$strings, $type = NULL, $object = NULL) {
+function humanitarianresponse_i18n_i18n_string_list_menu_alter(&$strings, $type = NULL, $object = NULL) {
   debug($strings);
   debug($type);
   debug($object);
