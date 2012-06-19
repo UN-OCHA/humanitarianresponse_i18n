@@ -13,3 +13,7 @@ dependencies[] = l10n_update
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
+features[variable][] = i18n_string_allowed_formats
+features[variable][] = i18n_string_source_language
+features[variable][] = l10n_update_check_frequency
+features[variable][] = l10n_update_check_mode
