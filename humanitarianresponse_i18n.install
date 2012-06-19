@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Include some helper functions for the Entity API.
+ */
+module_load_include('install', 'uuid');
+
+/**
+ * Implements hook_install()
+ */
+function humanitarianresponse_i18n_install() {
+  $field = uuid_schema_field_definition();
+  if (!db_field_exists('menu_links', 'uuid')) {
+    db_add_field('menu_links', 'uuid', $field);
+    db_add_index('menu_links', 'uuid', array('uuid'));
+  }
+  uuid_sync_all();
+}
+
+/**
+ * Implements of hook_schema_alter().
+ */
+function humanitarianresponse_i18n_schema_alter(&$schema = array()) {
+  $field = uuid_schema_field_definition();
+  $schema['menu_links']['fields']['uuid'] = $field;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function humanitarianresponse_i18n_uninstall() {
+  if (db_field_exists('menu_links', 'uuid')) {
+    db_drop_field('menu_links', 'uuid');
+    db_drop_index('menu_links', 'uuid');
+  }
+}
