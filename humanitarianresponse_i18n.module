@@ -34,6 +34,6 @@
 function humanitarianresponse_i18n_i18n_object_info_alter(&$info) {
   $info['taxonomy_term']['key'] = 'uuid';
   $info['taxonomy_vocabulary']['key'] = 'machine_name';
-  $info['menu_link']['key'] = 'link_path';
+  $info['menu_link']['key'] = array('menu_name', 'link_path');
 }
 
