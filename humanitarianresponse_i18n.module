@@ -3,30 +3,7 @@
  * @file
  */
 
-/**
- * Implements hook_enable()
- */
-/*function humanitarianresponse_i18n_enable() {
-  // Make main menu translatable
-  $menu = menu_load('main-menu');
-  $menu['i18n_mode'] = I18N_MODE_MULTIPLE;
-  i18n_menu_menu_update($menu);
-  
-  // Enable URL in language negotation
-  include_once DRUPAL_ROOT . '/includes/language.inc';
-  include_once DRUPAL_ROOT . '/includes/locale.inc';
-  $info = language_negotiation_info();
-  $negotiation = array(
-    LOCALE_LANGUAGE_NEGOTIATION_URL => $info[LOCALE_LANGUAGE_NEGOTIATION_URL],
-    LANGUAGE_NEGOTIATION_DEFAULT => $info[LANGUAGE_NEGOTIATION_DEFAULT]
-  );
-  language_negotiation_set('language', $negotiation);
-  foreach ($info as $id => $provider) {
-    $providers_weight[$id] = language_provider_weight($provider);
-  }
-  variable_set('locale_language_providers_weight_language', $providers_weight);
-  language_types_set();
-}*/
+include_once('humanitarianresponse_i18n.features.inc');
 
 /**
  * Implements hook_i18n_object_info_alter(&$info)
