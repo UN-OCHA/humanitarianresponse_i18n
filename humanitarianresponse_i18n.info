@@ -8,7 +8,6 @@ dependencies[] = entity_translation
 dependencies[] = features
 dependencies[] = humanitarianresponse_core
 dependencies[] = i18n
-dependencies[] = i18n_field
 dependencies[] = i18n_string
 dependencies[] = l10n_update
 dependencies[] = strongarm
