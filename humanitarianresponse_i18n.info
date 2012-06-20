@@ -4,6 +4,7 @@ core = 7.x
 package = Humanitarianresponse i18n
 php = 5.2.4
 dependencies[] = ctools
+dependencies[] = entity_translation
 dependencies[] = features
 dependencies[] = humanitarianresponse_core
 dependencies[] = i18n
