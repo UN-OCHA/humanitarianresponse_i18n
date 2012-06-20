@@ -23,9 +23,9 @@ function humanitarianresponse_i18n_install() {
     db_add_index('menu_links', 'uuid', array('uuid'));
   }
   uuid_sync_all();
-  // Refresh strings for menu
+  // Refresh strings for menu and taxonomy
   module_load_include('admin.inc', 'i18n_string');
-  i18n_string_refresh_enabled_modules(array('i18n_menu'));
+  i18n_string_refresh_enabled_modules(array('i18n_menu', 'i18n_taxonomy'));
 }
 
 /**
