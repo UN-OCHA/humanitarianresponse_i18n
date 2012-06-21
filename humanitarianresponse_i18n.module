@@ -69,6 +69,20 @@ db_update('system')
 }
 
 /**
+ * Implements hook_field_storage_details_alter().
+ *
+ * We don't alter the storage details but the stored details of the field itself...
+ *
+ * @param array $field
+ *   The field record just read from the database.
+ */
+function i18n_taxonomy_field_storage_details_alter(&$details, &$field) {
+  if ($field['type'] === 'taxonomy_term_reference') {
+    $field['settings']['options_list_callback'] = 'humanitarianresponse_i18n_allowed_values';
+  }
+}
+
+/**
  * Returns the set of valid terms for a taxonomy field.
  *
  * @param $field
