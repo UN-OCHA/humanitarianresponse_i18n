@@ -96,6 +96,7 @@ function humanitarianresponse_i18n_allowed_values($field) {
     if ($vocabulary = taxonomy_vocabulary_machine_name_load($tree['vocabulary'])) {
       if ($terms = taxonomy_get_tree($vocabulary->vid, $tree['parent'])) {
         foreach ($terms as $term) {
+          debug($term);
           $options[$term->tid] = str_repeat('-', $term->depth) . 'test';
         }
       }
