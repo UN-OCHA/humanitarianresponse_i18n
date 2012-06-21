@@ -98,10 +98,4 @@ function humanitarianresponse_i18n_allowed_values($field) {
   }
   return $options;
 }
-    
-function humanitarianresponse_i18n_taxonomy_term_load($terms) {
-  /*$tids = array_keys($terms);
-  foreach ($tids as $tid) {
-    $terms[$tid]->name = 'Test';
-  }*/
-}
+
