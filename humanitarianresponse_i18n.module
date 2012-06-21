@@ -53,6 +53,37 @@ function humanitarianresponse_i18n_menu_link_insert($link) {
     ->condition('mlid', $link['mlid'])
     ->execute();
 }
+
+/**
+ * Implements hook_field_info_alter()
+ */
+function humanitarianresponse_i18n_field_info_alter(&$info) {
+
+  // Translate field values.
+  $info['taxonomy_term_reference']['options_list_callback'] = 'humanitarianresponse_i18n_allowed_values';
+}
+
+/**
+ * Returns the set of valid terms for a taxonomy field.
+ *
+ * @param $field
+ *   The field definition.
+ * @return
+ *   The array of valid terms for this field, keyed by term id.
+ */
+function humanitarianresponse_i18n_allowed_values($field) {
+  $options = array();
+  foreach ($field['settings']['allowed_values'] as $tree) {
+    if ($vocabulary = taxonomy_vocabulary_machine_name_load($tree['vocabulary'])) {
+      if ($terms = taxonomy_get_tree($vocabulary->vid, $tree['parent'])) {
+        foreach ($terms as $term) {
+          $options[$term->tid] = str_repeat('-', $term->depth) . 'test';
+        }
+      }
+    }
+  }
+  return $options;
+}
     
 function humanitarianresponse_i18n_taxonomy_term_load($terms) {
   /*$tids = array_keys($terms);
