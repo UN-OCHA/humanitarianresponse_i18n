@@ -58,12 +58,6 @@ function humanitarianresponse_i18n_menu_link_insert($link) {
  * Implements hook_field_info_alter()
  */
 function humanitarianresponse_i18n_field_info_alter(&$info) {
-
-db_update('system')
-    ->fields(array('weight' => 10))
-    ->condition('name', 'humanitarianresponse_i18n')
-    ->execute();
-    
   // Translate field values.
   $info['taxonomy_term_reference']['options_list_callback'] = 'humanitarianresponse_i18n_allowed_values';
 }
