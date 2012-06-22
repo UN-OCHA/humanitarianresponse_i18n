@@ -117,6 +117,7 @@ function humanitarianresponse_i18n_form_alter(&$form, $form_state, $form_id) {
  */
 function humanitarianresponse_i18n_languages_changed_submit($form, $form_state) {
   debug(features_get_components());
+  debug(features_get_modules());
   
   features_revert(array('uuid_entities'));
 }
