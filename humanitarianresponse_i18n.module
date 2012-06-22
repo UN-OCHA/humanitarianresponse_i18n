@@ -116,12 +116,13 @@ function humanitarianresponse_i18n_form_alter(&$form, $form_state, $form_id) {
  * Revert all features containing uuid_entities to add taxonomy terms translations
  */
 function humanitarianresponse_i18n_languages_changed_submit($form, $form_state) {
-  /*$modules = features_get_modules();
-  foreach ($modules as $module) {
-    if (isset($module->info['features']) && isset($module->info['features']['uuid_entities'])) {
-  */    
-  debug(features_get_components());
-  debug(features_get_features());
+  $revert = array();
+  $features = features_get_features();
+  foreach ($features as $feature) {
+    if (modules_exists($feature->name) && isset($feature->info['features']['uuid_entities'])) {
+      $revert[$feature->name] = array('uuid_entities');
+    }
+  }
   
-  features_revert(array('uuid_entities'));
+  features_revert($revert);
 }
