@@ -115,5 +115,6 @@ function humanitarianresponse_i18n_form_alter(&$form, $form_state, $form_id) {
  * Revert all features containing uuid_entities to add taxonomy terms translations
  */
 function humanitarianresponse_i18n_languages_changed_submit($form, $form_state) {
+  debug('Test');
   features_revert(array('uuid_entities'));
 }
