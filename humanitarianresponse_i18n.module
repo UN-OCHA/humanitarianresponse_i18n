@@ -106,6 +106,7 @@ function humanitarianresponse_i18n_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'locale_languages_predefined_form':
     case 'locale_languages_custom_form':
+    case 'locale_languages_overview_form':
       $form['#submit'][] = 'humanitarianresponse_i18n_languages_changed_submit';
       break;
   }
