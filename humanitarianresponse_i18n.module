@@ -120,7 +120,8 @@ function humanitarianresponse_i18n_languages_changed_submit($form, $form_state) 
   $features = features_get_features();
   foreach ($features as $feature) {
     if (modules_exists($feature->name) && isset($feature->info['features']['uuid_entities'])) {
-      $revert[$feature->name] = array('uuid_entities');
+      $name = $feature->name;
+      $revert[$name] = array('uuid_entities');
     }
   }
   
