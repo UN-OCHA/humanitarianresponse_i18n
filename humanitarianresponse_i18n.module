@@ -99,3 +99,21 @@ function humanitarianresponse_i18n_allowed_values($field) {
   return $options;
 }
 
+/**
+ * Implements hook_form_alter().
+ */
+function humanitarianresponse_i18n_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'locale_languages_predefined_form':
+    case 'locale_languages_custom_form':
+      $form['#submit'][] = 'humanitarianresponse_i18n_languages_changed_submit';
+      break;
+  }
+}
+
+/**
+ * Revert all features containing uuid_entities to add taxonomy terms translations
+ */
+function humanitarianresponse_i18n_languages_changed_submit($form, $form_state) {
+  features_revert(array('uuid_entities'));
+}
