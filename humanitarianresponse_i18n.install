@@ -22,6 +22,9 @@ function humanitarianresponse_i18n_install() {
     ->fields(array('weight' => 10))
     ->condition('name', 'humanitarianresponse_i18n')
     ->execute();
+    
+  // Enable translation for nodes and taxonomy.
+  variable_set('entity_translation_entity_types', array('node' => 'node', 'taxonomy_term' => 'taxonomy_term'));
   
   $field = humanitarianresponse_i18n_uuid_schema_field_definition();
   if (!db_field_exists('menu_links', 'uuid')) {
