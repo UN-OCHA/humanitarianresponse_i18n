@@ -17,10 +17,6 @@ function humanitarianresponse_i18n_strongarm() {
   $strongarm->value = array(
     'node' => 'node',
     'taxonomy_term' => 'taxonomy_term',
-    'comment' => 0,
-    'field_collection_item' => 0,
-    'file' => 0,
-    'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
 
