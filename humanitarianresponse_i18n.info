@@ -16,7 +16,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
 features[user_permission][] = translate any entity
 features[user_permission][] = translate node entities
-features[variable][] = entity_translation_entity_types
 features[variable][] = i18n_hide_translation_links
 features[variable][] = i18n_node_default_language_none
 features[variable][] = i18n_string_allowed_formats
