@@ -10,25 +10,24 @@
 function humanitarianresponse_i18n_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: translate any entity.
-  $permissions['translate any entity'] = array(
-    'name' => 'translate any entity',
+  // Exported permission: translate user-defined strings.
+  $permissions['translate user-defined strings'] = array(
+    'name' => 'translate user-defined strings',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
-    'module' => 'entity_translation',
+    'module' => 'i18n_string',
   );
 
-  // Exported permission: translate node entities.
-  $permissions['translate node entities'] = array(
-    'name' => 'translate node entities',
+  // Exported permission: translate admin strings.
+  $permissions['translate admin strings'] = array(
+    'name' => 'translate admin strings',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
-    'module' => 'entity_translation',
+    'module' => 'i18n_string',
   );
 
   return $permissions;
